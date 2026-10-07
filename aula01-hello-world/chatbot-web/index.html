@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Chatbot da aula de LLMs do Senac" />
+    <title>Chatão — seu chatbot</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">C</div>
+          <div>
+            <h1>Chatão</h1>
+            <p><span class="status-dot"></span> Assistente online</p>
+          </div>
+        </div>
+        <button id="clearButton" class="ghost-button" type="button">Nova conversa</button>
+      </header>
+
+      <section id="messages" class="messages" aria-live="polite" aria-label="Conversa">
+        <article class="message bot-message">
+          <div class="avatar" aria-hidden="true">C</div>
+          <div class="bubble">
+            <p>Oi! Eu sou o Chatão. Manda uma pergunta — prometo tentar ajudar sem cobrar cafezinho ☕</p>
+          </div>
+        </article>
+      </section>
+
+      <footer class="composer-wrap">
+        <form id="chatForm" class="composer">
+          <label class="sr-only" for="messageInput">Sua mensagem</label>
+          <textarea
+            id="messageInput"
+            rows="1"
+            maxlength="4000"
+            placeholder="Escreva sua mensagem..."
+            autocomplete="off"
+            required
+          ></textarea>
+          <button id="sendButton" class="send-button" type="submit" aria-label="Enviar mensagem">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.4 20.1 21 12 3.4 3.9l.1 6.3 11.9 1.8-11.9 1.8-.1 6.3Z" />
+            </svg>
+          </button>
+        </form>
+        <p class="hint">Enter envia · Shift + Enter quebra a linha</p>
+      </footer>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
