@@ -16,7 +16,9 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   color: var(--text);
   background:
     radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.16), transparent 32rem),
@@ -28,10 +30,11 @@ button, textarea { font: inherit; }
 
 .app-shell {
   width: min(900px, 100%);
-  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  overflow: hidden;
   background: var(--panel);
   border-inline: 1px solid var(--line);
   backdrop-filter: blur(24px);
@@ -77,6 +80,8 @@ h1 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
 .messages {
   min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: 34px 24px;
   display: flex;
   flex-direction: column;
